@@ -15,7 +15,7 @@ def scrape_all():
 
 
 #Title and body text web scrape
-def scrape():
+def scrape_data():
     browser = scrape_all()
 
     url = 'https://mars.nasa.gov/news/'
