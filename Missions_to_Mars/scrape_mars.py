@@ -24,10 +24,10 @@ def scrape():
     soup = bs(html, 'html.parser')
     content = soup.find("div", class_='content_page')
     titles = content.find_all("div", class_='content_title')
-    print(titles[0].text.strip())
+    title_text = titles[0].text.strip()
 
-    article_text = content.find_all("div", class_='article_teaser_body')
-    article_text[0].text
+    article = content.find_all("div", class_='article_teaser_body')
+    article_text = article_text[0].text
 
     #IMG Webscrape
     url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
@@ -138,9 +138,17 @@ def scrape():
     hemisphere_image_urls = cerb_dict, schi_dict, syr_dict, val_dict
     hemisphere_image_urls
 
+    #adding python dictionary
+    mars={}
+    mars["title_text"]=title_text
+    mars["article_text"]=article_text
+    mars["pic_url"]=pic_url
+    mars["mars_fact"]=fact_html
+    mars["hemisphere_image_urls"]=hemisphere_image_urls
+    
     browser.quit()
 
-    return mars_info
+    return mars
 
 
 
