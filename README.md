@@ -1,4 +1,4 @@
-# web-scraping-challenge
+# NASA Mars Web Scraping
 
 ## Step 1 - Scraping
 
